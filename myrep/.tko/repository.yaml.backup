@@ -1,0 +1,30 @@
+version: '0.2'
+sources:
+- database: local
+  link: ''
+  type: local
+  branch: master
+  cache_path: ''
+  cache_timestamp: ''
+  filters: null
+- database: poo
+  link: C:\Users\Caduzera\poo\poo-rc-bloco-c-cdzra\myrep\.tko\cache\poo\Readme.md
+  type: clone
+  branch: master
+  cache_path: C:\Users\Caduzera\poo\poo-rc-bloco-c-cdzra\myrep\.tko\cache\poo\Readme.md
+  cache_timestamp: '2025-11-11 12:08:48'
+  filters:
+  - listas
+expanded:
+- poo@campanha-principal
+- poo@bloco_c-listas
+tasks:
+  poo@budega: '{rate:100}'
+flags:
+  quests: 0
+  tracks: 0
+  tasks: 0
+  graph: 0
+  xray: 0
+lang: py
+selected: poo@budega
