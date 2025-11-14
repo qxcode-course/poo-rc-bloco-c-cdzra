@@ -12,7 +12,7 @@ sources:
   type: clone
   branch: master
   cache_path: C:\Users\Caduzera\poo\poo-rc-bloco-c-cdzra\myrep\.tko\cache\poo\Readme.md
-  cache_timestamp: '2025-11-13 10:19:54'
+  cache_timestamp: '2025-11-14 11:49:51'
   filters:
   - listas
 expanded:
@@ -28,4 +28,4 @@ flags:
   graph: 1
   xray: 0
 lang: py
-selected: poo@lapiseira
+selected: poo@pula-pula

@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-14_11-50-21",
+            "content": "@@ -1,455 +0,0 @@\n-class Crianca:%0A    def __init__(self, nome: str, idade: int):%0A        self.__nome = nome%0A        self.__idade = idade%0A%0A    def getNome(self):%0A        return self.__nome%0A    %0A    def getIdade(self):%0A        return self.__idade%0A    %0A    def setNome(self, nome: str):%0A        self.__nome = nome%0A%0A    def setIdade(self, idade: int):%0A        self.__idade = idade%0A%0A    def __str__(self):%0A        return f%22%7BCrianca.getNome%7D:%7BCrianca.getIdade%7D%22%0A    print(Crianca)\n",
+            "lines": "0"
+        },
+        {
+            "label": "2025-11-14_11-57-32",
+            "content": "@@ -1,8 +1,29 @@\n+@@ -1,477 +1,112 @@%0A-\n class Cr\n@@ -28,17 +28,19 @@\n Crianca:\n-%0A\n+%250A\n     def \n@@ -69,33 +69,35 @@\n tr, idade: int):\n-%0A\n+%250A\n         self.__n\n@@ -102,25 +102,27 @@\n _nome = nome\n-%0A\n+%250A\n         self\n@@ -129,34 +129,38 @@\n .__idade = idade\n-%0A%0A\n+%250A%250A\n     def getNome(\n@@ -157,33 +157,35 @@\n f getNome(self):\n-%0A\n+%250A\n         return s\n@@ -194,22 +194,26 @@\n f.__nome\n-%0A\n+%250A\n     \n-%0A\n+%250A\n     def \n@@ -223,25 +223,27 @@\n Idade(self):\n-%0A\n+%250A\n         retu\n@@ -261,14 +261,18 @@\n dade\n-%0A\n+%250A\n     \n-%0A\n+%250A\n     \n@@ -300,17 +300,19 @@\n e: str):\n-%0A\n+%250A\n         \n@@ -329,18 +329,22 @@\n e = nome\n-%0A%0A\n+%250A%250A\n     def \n@@ -370,17 +370,19 @@\n e: int):\n-%0A\n+%250A\n         \n@@ -405,10 +405,14 @@\n dade\n-%0A%0A\n+%250A%250A\n     \n@@ -429,17 +429,19 @@\n _(self):\n-%0A\n+%250A\n         \n@@ -452,10 +452,14 @@\n rn f\n-%22%7B\n+%2522%257B\n Cria\n@@ -473,11 +473,15 @@\n Nome\n-%7D:%7B\n+%257D:%257B\n Cria\n@@ -496,47 +496,193 @@\n dade\n-%7D%22%0A    crianca = Crianca%0A    print(c\n+%257D%2522%250A    crianca = Crianca%250A    print(c%0A+@@ -434,30 +434,8 @@%250A e%25257D%252522%25250A%250A-    crianca = Crianca%25250A%250A     %250A@@ -440,16 +440,16 @@%250A   print(%250A-c%250A+C%250A %0A \n rianca)\n+%0A+%250A%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2025-11-14_11-58-18",
+            "content": "@@ -430,16 +430,38 @@\n Idade%7D%22%0A\n+    crianca = Crianca%0A\n     prin\n@@ -462,16 +462,16 @@\n   print(\n-C\n+c\n rianca)\n",
+            "lines": "21"
+        },
+        {
+            "label": "2025-11-14_11-59-11",
+            "content": "class Crianca:\n    def __init__(self, nome: str, idade: int):\n        self.__nome = nome\n        self.__idade = idade\n\n    def getNome(self):\n        return self.__nome\n    \n    def getIdade(self):\n        return self.__idade\n    \n    def setNome(self, nome: str):\n        self.__nome = nome\n\n    def setIdade(self, idade: int):\n        self.__idade = idade\n\n    def __str__(self):\n        return f\"{Crianca.getNome}:{Crianca.getIdade}\"\n    print(Crianca)",
+            "lines": "20"
+        }
+    ]
+}
