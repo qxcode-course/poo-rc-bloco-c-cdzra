@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-16_16-15-24",
+            "content": "class Cliente:\n    def __init__(self, id: str, fone: int):\n        self.__id = id\n        self.__fone = fone\n\n    def getId(self):\n        return self.__id\n    \n    def getFone(self):\n        return self.__fone\n    \n    def setId(self, id: str):\n        self.__id = id\n\n    def setFone(self, fone: int):\n        self.__fone = fone\n    \n    def __str__(self):\n        return f\"{self.__id}:{self.__fone}\"",
+            "lines": "19"
+        }
+    ]
+}

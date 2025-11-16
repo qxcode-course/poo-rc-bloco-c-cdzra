@@ -47,3 +47,7 @@
 2025-11-16 16:05:20, MOVE, v:1, k:poo@pula-pula, mode:BACK
 2025-11-16 16:05:35, MOVE, v:1, k:poo@pula-pula, mode:PICK
 2025-11-16 16:05:35, MOVE, v:1, k:poo@pula-pula, mode:BACK
+2025-11-16 16:09:17, MOVE, v:1, k:poo@cinema, mode:DOWN
+2025-11-16 16:15:23, MOVE, v:1, k:poo@cinema, mode:PICK
+2025-11-16 16:15:24, EXEC, v:1, k:poo@cinema, mode:FULL, rate:0, size:19
+2025-11-16 16:15:25, MOVE, v:1, k:poo@cinema, mode:BACK
