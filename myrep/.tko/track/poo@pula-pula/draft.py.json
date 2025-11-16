@@ -37,8 +37,73 @@
         },
         {
             "label": "2025-11-16_15-46-51",
-            "content": "class Crianca:\n    def __init__(self, nome: str, idade: int):\n        self.__nome = nome\n        self.__idade = idade\n\n    def getNome(self):\n        return self.__nome\n    \n    def getIdade(self):\n        return self.__idade\n    \n    def setNome(self, nome: str):\n        self.__nome = nome\n\n    def setIdade(self, idade: int):\n        self.__idade = idade\n\n    def __str__(self):\n        return f\"{Crianca.getNome}:{Crianca.getIdade}\"\n    \nclass Trampolim:\n    def __init__(self):\n        self.brincando: list[Crianca] = []\n        self.esperando: list[Crianca] = []\n\n    def removeFromList(self, nome: str, listC: list[Crianca]) -> Crianca | None:\n        for i, crianca in enumerate(listC):\n            if crianca.getNome() == nome:\n                return listC.pop(i)\n            return None\n        \n    def removerCrianca(self, nome: str) -> Crianca | None:\n        crianca = self.removeFromList(nome, self.esperando)\n        if crianca is not None:\n            return crianca\n        return self.removeFromList(nome, self.brincando)\n    \n    def chegar(self, crianca: Crianca):\n        self.esperando.insert(0, crianca)\n\n    def entrar(self):\n        crianca = self.esperando.pop(-1)\n        self.brincando.insert(0, crianca)\n    \n    def sair(self):\n        crianca = self.esperando.pop(-1)\n        self.brincando.insert(0, crianca)\n\n    def __str__(self):\n        espera = \", \".join(str(x) for x in self.esperando)\n        brincando = \", \".join(str(x) for x in self.brincando)\n        return f\"[{espera}] => [{brincando}]\"\n\n",
+            "content": "@@ -1530,267 +1530,5 @@\n %7D%5D%22%0A\n-    %0Adef main():%0A    trampolim = Trampolim()%0A    while True:%0A        line = input()%0A        print(%22$%22 + line)%0A        args: list%5Bstr%5D = line.split()%0A        if args%5B0%5D == %22end%22:%0A            break%0A        elif args%5B0%5D == %22show%22:%0A            print(trampolim)%0Amain()\n+%0A\n",
             "lines": "53"
+        },
+        {
+            "label": "2025-11-16_15-49-44",
+            "content": "@@ -1787,156 +1787,8 @@\n im)%0A\n-        elif args%5B0%5D == %22arrive%22:%0A            nome = args%5B1%5D%0A            idade = int(args%5B2%5D)%0A            trampolim = Trampolim.chegar(nome, idade)%0A\n main\n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-11-16_15-52-14",
+            "content": "@@ -1902,23 +1902,27 @@\n olim\n-.chegar(Crianca\n+ = Trampolim.chegar\n (nom\n",
+            "lines": "68"
+        },
+        {
+            "label": "2025-11-16_15-53-13",
+            "content": "@@ -1926,16 +1926,15 @@\n , idade)\n-)\n %0Amain()\n",
+            "lines": "68"
+        },
+        {
+            "label": "2025-11-16_15-53-23",
+            "content": "@@ -397,30 +397,38 @@\n  f%22%7B\n-self.__nome%7D:%7Bself.__i\n+Crianca.getNome%7D:%7BCrianca.getI\n dade\n",
+            "lines": "68"
+        },
+        {
+            "label": "2025-11-16_15-54-46",
+            "content": "@@ -1924,72 +1924,8 @@\n e))%0A\n-        elif args%5B0%5D == %22enter%22:%0A            Trampolim.entrar()%0A\n main\n",
+            "lines": "68"
+        },
+        {
+            "label": "2025-11-16_15-55-56",
+            "content": "@@ -1957,33 +1957,33 @@\n r%22:%0A            \n-t\n+T\n rampolim.entrar(\n",
+            "lines": "70"
+        },
+        {
+            "label": "2025-11-16_15-56-23",
+            "content": "@@ -1988,70 +1988,8 @@\n r()%0A\n-        elif args%5B0%5D == %22leave%22:%0A            trampolim.sair()%0A\n main\n",
+            "lines": "70"
+        },
+        {
+            "label": "2025-11-16_15-57-04",
+            "content": "@@ -1263,29 +1263,29 @@\n anca = self.\n-brinc\n+esper\n ando.pop(-1)\n@@ -1290,37 +1290,37 @@\n 1)%0A        self.\n-esper\n+brinc\n ando.insert(0, c\n",
+            "lines": "72"
+        },
+        {
+            "label": "2025-11-16_15-58-29",
+            "content": "@@ -2050,215 +2050,8 @@\n r()%0A\n-        elif args%5B0%5D == %22remove%22:%0A            nome = args%5B1%5D%0A            crianca = trampolim.removerCrianca(nome)%0A            if crianca is None:%0A                print(f%22fail: %7Bnome%7D nao esta no trampolim%22)%0A\n main\n",
+            "lines": "72"
+        },
+        {
+            "label": "2025-11-16_16-01-15",
+            "content": "@@ -2245,17 +2245,17 @@\n  no \n-pula-pula\n+trampolim\n %22)%0Am\n",
+            "lines": "77"
+        },
+        {
+            "label": "2025-11-16_16-02-09",
+            "content": "@@ -762,24 +762,28 @@\n (i)%0A        \n+    \n return None%0A\n",
+            "lines": "77"
+        },
+        {
+            "label": "2025-11-16_16-03-10",
+            "content": "@@ -1244,48 +1244,8 @@\n f):%0A\n-        if len(self.brincando) %3E 0:%0A    \n     \n@@ -1277,28 +1277,24 @@\n ndo.pop(-1)%0A\n-    \n         self\n",
+            "lines": "77"
+        },
+        {
+            "label": "2025-11-16_16-05-14",
+            "content": "class Crianca:\n    def __init__(self, nome: str, idade: int):\n        self.__nome = nome\n        self.__idade = idade\n\n    def getNome(self):\n        return self.__nome\n    \n    def getIdade(self):\n        return self.__idade\n    \n    def setNome(self, nome: str):\n        self.__nome = nome\n\n    def setIdade(self, idade: int):\n        self.__idade = idade\n\n    def __str__(self):\n        return f\"{self.__nome}:{self.__idade}\"\n    \nclass Trampolim:\n    def __init__(self):\n        self.brincando: list[Crianca] = []\n        self.esperando: list[Crianca] = []\n\n    def removeFromList(self, nome: str, listC: list[Crianca]) -> Crianca | None:\n        for i, crianca in enumerate(listC):\n            if crianca.getNome() == nome:\n                return listC.pop(i)\n        return None\n        \n    def removerCrianca(self, nome: str) -> Crianca | None:\n        crianca = self.removeFromList(nome, self.esperando)\n        if crianca is not None:\n            return crianca\n        return self.removeFromList(nome, self.brincando)\n    \n    def chegar(self, crianca: Crianca):\n        self.esperando.insert(0, crianca)\n\n    def entrar(self):\n        crianca = self.esperando.pop(-1)\n        self.brincando.insert(0, crianca)\n    \n    def sair(self):\n        if len(self.brincando) > 0:\n            crianca = self.brincando.pop(-1)\n            self.esperando.insert(0, crianca)\n\n    def __str__(self):\n        espera = \", \".join(str(x) for x in self.esperando)\n        brincando = \", \".join(str(x) for x in self.brincando)\n        return f\"[{espera}] => [{brincando}]\"\n    \ndef main():\n    trampolim = Trampolim()\n    while True:\n        line = input()\n        print(\"$\" + line)\n        args: list[str] = line.split()\n        if args[0] == \"end\":\n            break\n        elif args[0] == \"show\":\n            print(trampolim)\n        elif args[0] == \"arrive\":\n            nome = args[1]\n            idade = int(args[2])\n            trampolim.chegar(Crianca(nome, idade))\n        elif args[0] == \"enter\":\n            trampolim.entrar()\n        elif args[0] == \"leave\":\n            trampolim.sair()\n        elif args[0] == \"remove\":\n            nome = args[1]\n            crianca = trampolim.removerCrianca(nome)\n            if crianca is None:\n                print(f\"fail: {nome} nao esta no pula-pula\")\nmain()",
+            "lines": "78"
         }
     ]
 }
