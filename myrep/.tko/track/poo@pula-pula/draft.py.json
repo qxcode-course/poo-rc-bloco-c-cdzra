@@ -17,8 +17,23 @@
         },
         {
             "label": "2025-11-14_11-59-11",
-            "content": "class Crianca:\n    def __init__(self, nome: str, idade: int):\n        self.__nome = nome\n        self.__idade = idade\n\n    def getNome(self):\n        return self.__nome\n    \n    def getIdade(self):\n        return self.__idade\n    \n    def setNome(self, nome: str):\n        self.__nome = nome\n\n    def setIdade(self, idade: int):\n        self.__idade = idade\n\n    def __str__(self):\n        return f\"{Crianca.getNome}:{Crianca.getIdade}\"\n    print(Crianca)",
+            "content": "@@ -429,8 +429,27 @@\n tIdade%7D%22\n+%0A    print(Crianca)\n",
             "lines": "20"
+        },
+        {
+            "label": "2025-11-14_17-19-16",
+            "content": "@@ -433,364 +433,4 @@\n de%7D%22\n-%0A    %0Aclass Trampolim:%0A    def __init__(self):%0A        self.brincando: list%5BCrianca%5D = %5B%5D%0A        self.esperando: list%5BCrianca%5D = %5B%5D%0A%0A    def removeFromList(self, nome: str, listC: list%5BCrianca%5D) -%3E Crianca %7C None:%0A        for i, c in enumerate(listC):%0A            if c.getNome() == nome:%0A                return listC.pop(i)%0A            return None%0A        %0A%0A%0A\n",
+            "lines": "19"
+        },
+        {
+            "label": "2025-11-16_15-21-58",
+            "content": "@@ -660,22 +660,16 @@\n for i, c\n-rianca\n  in enum\n@@ -698,22 +698,16 @@\n     if c\n-rianca\n .getNome\n@@ -791,336 +791,6 @@\n    %0A\n-    def removerCrianca(self, nome: str) -%3E Crianca %7C None:%0A        crianca = self.removeFromList(nome, self.esperando)%0A        if crianca is not None:%0A            return crianca%0A        return self.removeFromList(nome, self.brincando)%0A    %0A    def arrive(self, crianca: Crianca):%0A        self.esperando.insert(0, crianca)%0A        \n %0A%0A\n",
+            "lines": "33"
+        },
+        {
+            "label": "2025-11-16_15-30-18",
+            "content": "class Crianca:\n    def __init__(self, nome: str, idade: int):\n        self.__nome = nome\n        self.__idade = idade\n\n    def getNome(self):\n        return self.__nome\n    \n    def getIdade(self):\n        return self.__idade\n    \n    def setNome(self, nome: str):\n        self.__nome = nome\n\n    def setIdade(self, idade: int):\n        self.__idade = idade\n\n    def __str__(self):\n        return f\"{Crianca.getNome}:{Crianca.getIdade}\"\n    \nclass Trampolim:\n    def __init__(self):\n        self.brincando: list[Crianca] = []\n        self.esperando: list[Crianca] = []\n\n    def removeFromList(self, nome: str, listC: list[Crianca]) -> Crianca | None:\n        for i, crianca in enumerate(listC):\n            if crianca.getNome() == nome:\n                return listC.pop(i)\n            return None\n        \n    def removerCrianca(self, nome: str) -> Crianca | None:\n        crianca = self.removeFromList(nome, self.esperando)\n        if crianca is not None:\n            return crianca\n        return self.removeFromList(nome, self.brincando)\n    \n    def arrive(self, crianca: Crianca):\n        self.esperando.insert(0, crianca)\n        \n\n",
+            "lines": "41"
         }
     ]
 }
