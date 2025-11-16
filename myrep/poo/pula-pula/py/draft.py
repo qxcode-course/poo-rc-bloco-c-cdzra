@@ -35,7 +35,19 @@ class Trampolim:
             return crianca
         return self.removeFromList(nome, self.brincando)
     
-    def arrive(self, crianca: Crianca):
+    def chegar(self, crianca: Crianca):
         self.esperando.insert(0, crianca)
-        
+
+    def entrar(self):
+        crianca = self.esperando.pop(-1)
+        self.brincando.insert(0, crianca)
+    
+    def sair(self):
+        crianca = self.esperando.pop(-1)
+        self.brincando.insert(0, crianca)
+
+    def __str__(self):
+        espera = ", ".join(str(x) for x in self.esperando)
+        brincando = ", ".join(str(x) for x in self.brincando)
+        return f"[{espera}] => [{brincando}]"
 
