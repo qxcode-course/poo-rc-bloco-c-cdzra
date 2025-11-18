@@ -2,8 +2,18 @@
     "patches": [
         {
             "label": "2025-11-16_16-15-24",
-            "content": "class Cliente:\n    def __init__(self, id: str, fone: int):\n        self.__id = id\n        self.__fone = fone\n\n    def getId(self):\n        return self.__id\n    \n    def getFone(self):\n        return self.__fone\n    \n    def setId(self, id: str):\n        self.__id = id\n\n    def setFone(self, fone: int):\n        self.__fone = fone\n    \n    def __str__(self):\n        return f\"{self.__id}:{self.__fone}\"",
+            "content": "@@ -399,145 +399,4 @@\n ne%7D%22\n-%0A    %0Aclass Cinema:%0A    def __init__(self, capacidade: int):%0A        self.acentos = list%5BCliente %7C None%5D%0A        self.capacidade = capacidade\n",
             "lines": "19"
+        },
+        {
+            "label": "2025-11-18_14-04-35",
+            "content": "@@ -465,26 +465,24 @@\n        self.\n-__\n acentos = li\n@@ -503,30 +503,8 @@\n one%5D\n- = %5BNone%5D * capacidade\n %0A   \n@@ -509,26 +509,24 @@\n        self.\n-__\n capacidade =\n@@ -540,307 +540,4 @@\n dade\n-%0A%0A    def busca(self, id: str) -%3E int:%0A        for i, cliente in enumerate(self.__acentos):%0A            if cliente is not None and cliente.getId() == id:%0A                return i%0A        return -1%0A%0A    def verificarIndex(self, index: int) -%3E bool:%0A        return 0 %3C= index %3C self.__capacidade%0A    %0A    \n",
+            "lines": "24"
+        },
+        {
+            "label": "2025-11-18_14-12-50",
+            "content": "class Cliente:\n    def __init__(self, id: str, fone: int):\n        self.__id = id\n        self.__fone = fone\n\n    def getId(self):\n        return self.__id\n    \n    def getFone(self):\n        return self.__fone\n    \n    def setId(self, id: str):\n        self.__id = id\n\n    def setFone(self, fone: int):\n        self.__fone = fone\n    \n    def __str__(self):\n        return f\"{self.__id}:{self.__fone}\"\n    \nclass Cinema:\n    def __init__(self, capacidade: int):\n        self.__acentos = list[Cliente | None] = [None] * capacidade\n        self.__capacidade = capacidade\n\n    def busca(self, id: str) -> int:\n        for i, cliente in enumerate(self.__acentos):\n            if cliente is not None and cliente.getId() == id:\n                return i\n        return -1\n\n    def verificarIndex(self, index: int) -> bool:\n        return 0 <= index < self.__capacidade\n    \n    ",
+            "lines": "35"
         }
     ]
 }
