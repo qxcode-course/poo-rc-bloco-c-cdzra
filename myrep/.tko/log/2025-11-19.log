@@ -3,3 +3,7 @@
 2025-11-19 12:31:36, EXEC, v:1, k:poo@cinema, mode:FREE, size:89
 2025-11-19 12:32:57, EXEC, v:1, k:poo@cinema, mode:FULL, rate:100
 2025-11-19 12:33:12, MOVE, v:1, k:poo@cinema, mode:BACK
+2025-11-19 16:26:08, MOVE, v:1, k:poo@junkfood, mode:DOWN
+2025-11-19 16:26:14, MOVE, v:1, k:poo@junkfood, mode:PICK
+2025-11-19 16:30:24, EXEC, v:1, k:poo@junkfood, mode:FULL, rate:0, size:26
+2025-11-19 16:30:24, MOVE, v:1, k:poo@junkfood, mode:BACK
