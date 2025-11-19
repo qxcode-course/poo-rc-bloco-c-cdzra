@@ -75,4 +75,15 @@ def main():
             break
         elif args[0] == "show":
             print(cinema)
+        elif args[0] == "init":
+            cine = int(args[1])
+            cinema = Cinema(cine)
+        elif args[0] == "reserve":
+            id = args[1]
+            fone = int(args[2])
+            index = int(args[3])
+            cinema.reservar(id, fone, index)
+        elif args[0] == "cancel":
+            id = args[1]
+            cinema.cancelar(id)
 main()
