@@ -20,7 +20,7 @@ class Cliente:
     
 class Cinema:
     def __init__(self, capacidade: int):
-        self.__acentos = list[Cliente | None] = [None] * capacidade
+        self.__acentos: list[Cliente | None] = [None] * capacidade
         self.__capacidade = capacidade
 
     def busca(self, id: str) -> int:
@@ -32,4 +32,47 @@ class Cinema:
     def verificarIndex(self, index: int) -> bool:
         return 0 <= index < self.__capacidade
     
+    def reservar(self, id: str, fone: int, index: int) -> bool:
+        if index < 0 or index >= len(self.__acentos):
+            print("fail: cadeira nao existe")
+            return False
+        if self.busca(id) != -1:
+            print("fail: cliente ja esta no cinema")
+            return False
+        if self.__acentos[index] is not None:
+            print("fail: cadeira ja esta ocupada")
+            return False
+        self.__acentos[index] = Cliente(id, fone)
+        return True
     
+    def cancelar(self, id: str) -> bool:
+        pos = self.busca(id)
+        if pos == -1:
+            print("fail: cliente nao esta no cinema")
+            return False
+        self.__acentos[pos] = None
+        return True
+    
+    def getAcentos(self):
+        return self.__acentos
+    
+    def __str__(self):
+        out = []
+        for acentos in self.__acentos:
+            if acentos is None:
+                out.append("-")
+            else:
+                out.append(str(acentos))
+        return f"[{" ".join(out)}]"
+        
+def main():
+    cinema = Cinema(0)
+    while True:
+        line = input()
+        print("$" + line)
+        args: list[str] = line.split()
+        if args[0] == "end":
+            break
+        elif args[0] == "show":
+            print(cinema)
+main()

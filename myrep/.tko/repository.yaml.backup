@@ -12,7 +12,7 @@ sources:
   type: clone
   branch: master
   cache_path: C:\Users\Caduzera\poo\poo-rc-bloco-c-cdzra\myrep\.tko\cache\poo\Readme.md
-  cache_timestamp: '2025-11-18 14:04:29'
+  cache_timestamp: '2025-11-18 22:32:21'
   filters:
   - listas
 expanded:

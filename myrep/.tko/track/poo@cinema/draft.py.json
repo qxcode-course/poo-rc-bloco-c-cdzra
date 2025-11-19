@@ -12,8 +12,48 @@
         },
         {
             "label": "2025-11-18_14-12-50",
-            "content": "class Cliente:\n    def __init__(self, id: str, fone: int):\n        self.__id = id\n        self.__fone = fone\n\n    def getId(self):\n        return self.__id\n    \n    def getFone(self):\n        return self.__fone\n    \n    def setId(self, id: str):\n        self.__id = id\n\n    def setFone(self, fone: int):\n        self.__fone = fone\n    \n    def __str__(self):\n        return f\"{self.__id}:{self.__fone}\"\n    \nclass Cinema:\n    def __init__(self, capacidade: int):\n        self.__acentos = list[Cliente | None] = [None] * capacidade\n        self.__capacidade = capacidade\n\n    def busca(self, id: str) -> int:\n        for i, cliente in enumerate(self.__acentos):\n            if cliente is not None and cliente.getId() == id:\n                return i\n        return -1\n\n    def verificarIndex(self, index: int) -> bool:\n        return 0 <= index < self.__capacidade\n    \n    ",
+            "content": "@@ -869,72 +869,4 @@\n     \n-def reservar(self, id: str, fone: int, index: int) -%3E bool:%0A        \n",
             "lines": "35"
+        },
+        {
+            "label": "2025-11-18_22-33-51",
+            "content": "@@ -937,831 +937,4 @@\n     \n-if index %3C 0 or index %3E= len(self.__acentos):%0A            print(%22fail: cadeira nao existe%22)%0A            return False%0A        if self.busca(id) != -1:%0A            print(%22fail: cliente ja esta no cinema%22)%0A            return False%0A        if self.__acentos%5Bindex%5D is not None:%0A            print(%22fail: cadeira ja esta ocupada%22)%0A            return False%0A        self.__acentos%5Bindex%5D = Cliente(id, fone)%0A        return True%0A    %0A    def cancelar(self, id: str) -%3E bool:%0A        pos = self.busca(id)%0A        if pos == -1:%0A            print(%22fail: cliente nao esta no cinema%22)%0A            return False%0A        self.__acentos%5Bpos%5D = None%0A        return True%0A    %0A    def getAcentos(self):%0A        return self.__acentos%0A    %0A    def __str__(self):%0A        out = %5B%5D%0A        for acentos in self.__acentos:%0A            if acentos is None%0A\n",
+            "lines": "36"
+        },
+        {
+            "label": "2025-11-18_22-44-22",
+            "content": "@@ -1763,147 +1763,5 @@\n None\n-:%0A                out.append(%22-%22)%0A            else:%0A                out.append(str(acentos))%0A            return f%22%5B%7B%22 %22.join(out)%7D%5D%22%0A        %0A\n %0A\n",
+            "lines": "62"
+        },
+        {
+            "label": "2025-11-18_22-47-19",
+            "content": "@@ -1905,248 +1905,5 @@\n    %0A\n-def main():%0A    cinema = Cinema(0)%0A    while True:%0A        line = input()%0A        print(%22$%22 + line)%0A        args: list%5Bstr%5D = line.split()%0A        if args%5B0%5D == %22end%22:%0A            break%0A        elif args%5B0%5D == %22show%22:%0A            print(cinema)\n %0A\n",
+            "lines": "68"
+        },
+        {
+            "label": "2025-11-18_22-49-06",
+            "content": "@@ -2145,14 +2145,8 @@\n cinema)%0A\n-main()\n",
+            "lines": "77"
+        },
+        {
+            "label": "2025-11-18_22-49-20",
+            "content": "@@ -478,17 +478,18 @@\n _acentos\n-:\n+ =\n  list%5BCl\n",
+            "lines": "78"
+        },
+        {
+            "label": "2025-11-18_22-50-25",
+            "content": "@@ -1689,17 +1689,16 @@\n ut = %5B%5D%0A\n-%0A\n         \n@@ -1851,16 +1851,20 @@\n entos))%0A\n+    \n         \n",
+            "lines": "78"
+        },
+        {
+            "label": "2025-11-18_22-52-52",
+            "content": "@@ -1689,16 +1689,17 @@\n ut = %5B%5D%0A\n+%0A\n         \n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-18_22-53-30",
+            "content": "class Cliente:\n    def __init__(self, id: str, fone: int):\n        self.__id = id\n        self.__fone = fone\n\n    def getId(self):\n        return self.__id\n    \n    def getFone(self):\n        return self.__fone\n    \n    def setId(self, id: str):\n        self.__id = id\n\n    def setFone(self, fone: int):\n        self.__fone = fone\n    \n    def __str__(self):\n        return f\"{self.__id}:{self.__fone}\"\n    \nclass Cinema:\n    def __init__(self, capacidade: int):\n        self.__acentos: list[Cliente | None] = [None] * capacidade\n        self.__capacidade = capacidade\n\n    def busca(self, id: str) -> int:\n        for i, cliente in enumerate(self.__acentos):\n            if cliente is not None and cliente.getId() == id:\n                return i\n        return -1\n\n    def verificarIndex(self, index: int) -> bool:\n        return 0 <= index < self.__capacidade\n    \n    def reservar(self, id: str, fone: int, index: int) -> bool:\n        if index < 0 or index >= len(self.__acentos):\n            print(\"fail: cadeira nao existe\")\n            return False\n        if self.busca(id) != -1:\n            print(\"fail: cliente ja esta no cinema\")\n            return False\n        if self.__acentos[index] is not None:\n            print(\"fail: cadeira ja esta ocupada\")\n            return False\n        self.__acentos[index] = Cliente(id, fone)\n        return True\n    \n    def cancelar(self, id: str) -> bool:\n        pos = self.busca(id)\n        if pos == -1:\n            print(\"fail: cliente nao esta no cinema\")\n            return False\n        self.__acentos[pos] = None\n        return True\n    \n    def getAcentos(self):\n        return self.__acentos\n    \n    def __str__(self):\n        out = []\n        for acentos in self.__acentos:\n            if acentos is None:\n                out.append(\"-\")\n            else:\n                out.append(str(acentos))\n        return f\"[{\" \".join(out)}]\"\n        \ndef main():\n    cinema = Cinema(0)\n    while True:\n        line = input()\n        print(\"$\" + line)\n        args: list[str] = line.split()\n        if args[0] == \"end\":\n            break\n        elif args[0] == \"show\":\n            print(cinema)\nmain()",
+            "lines": "78"
         }
     ]
 }
